@@ -1,5 +1,5 @@
 // Array of special characters to be included in password
-var specialCharacters = [
+let specialCharacters = [
   '@',
   '%',
   '+',
@@ -26,10 +26,10 @@ var specialCharacters = [
 ];
 
 // Array of numeric characters to be included in password
-var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+let numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 // Array of lowercase characters to be included in password
-var lowerCasedCharacters = [
+let lowerCasedCharacters = [
   'a',
   'b',
   'c',
@@ -94,11 +94,11 @@ let passwordLength = 0;
 // Function to prompt user for password options
 function getPasswordOptions() {
   
-  // this needs to be between 8 and 128
+  // this needs to be between 10 and 64
   // check that the value that the user entered meets these criteria
-  while(passwordLength < 8 || passwordLength > 128) {
+  while(passwordLength < 10 || passwordLength > 64) {
     passwordLength = prompt("How long would you like your password to be?");
-    if(passwordLength < 8 || passwordLength > 128) {
+    if(passwordLength < 10 || passwordLength > 64) {
       alert("Password length must be between 8 and 128 characters");
     }
   }
@@ -111,6 +111,17 @@ function getPasswordOptions() {
     characterSet = characterSet.concat(upperCasedCharacters);
   }
 
+  if(confirm("Would you like to use Numeric letters?")){
+    characterSet = characterSet.concat(numericCharacters);
+
+    console.log(numericCharacters);
+  }
+
+  if(confirm("Would you like to use  special letters?")){
+    characterSet = characterSet.concat(specialCharacters);
+
+    console.log(specialCharacters);
+  }
   // make sure the user has chosen at least one set of characters
 }
 
