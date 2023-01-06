@@ -114,13 +114,13 @@ function getPasswordOptions() {
   if(confirm("Would you like to use Numeric letters?")){
     characterSet = characterSet.concat(numericCharacters);
 
-    console.log(numericCharacters);
+    // console.log(numericCharacters);
   }
 
   if(confirm("Would you like to use  special letters?")){
     characterSet = characterSet.concat(specialCharacters);
 
-    console.log(specialCharacters);
+    // console.log(specialCharacters);
   }
   // make sure the user has chosen at least one set of characters
 }
